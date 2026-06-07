@@ -41,6 +41,10 @@ npm run build
 
 Static files are output to `out/` — this is what Cloudflare Pages deploys.
 
+> **Important:** Build output directory must be `out` (not `.next`). Framework preset: **Next.js (Static HTML Export)** or **None**.
+
+Each route is emitted as a folder with `index.html` (e.g. `out/about/index.html`) via `trailingSlash: true` in `next.config.ts` — required for Cloudflare Pages routing.
+
 ## GitHub
 
 ```bash
