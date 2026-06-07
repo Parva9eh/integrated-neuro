@@ -1,9 +1,12 @@
+const defaultSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const siteConfig = {
   name: "Integrated Neuro",
   tagline: "Integrated Neurological Healthcare",
   description:
     "Holistic, evidence-informed care for brain injury, neurological conditions, and mental wellness in Vancouver, BC.",
-  url: "https://integratedneuro.ca",
+  url: defaultSiteUrl,
   counsellingBrand: "IN-Sight Mind Body Wellness",
   contact: {
     address: "Suite 300 – 1090 Homer Street",

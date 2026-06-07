@@ -1,6 +1,6 @@
 # Integrated Neuro Website
 
-Public brochure site for [Integrated Neuro](https://integratedneuro.ca) — built with Next.js static export and deployed to Cloudflare Pages.
+Public brochure site for Integrated Neuro — built with Next.js static export and deployed to Cloudflare Pages.
 
 ## Stack
 
@@ -9,7 +9,7 @@ Public brochure site for [Integrated Neuro](https://integratedneuro.ca) — buil
 - **Tailwind CSS**
 - **Cloudflare Pages** (hosting)
 
-See [PLAN.md](./PLAN.md) for the full project plan and migration checklist.
+See [PLAN.md](./PLAN.md) for the full project plan.
 
 ## Getting started
 
@@ -22,11 +22,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment variables
 
-Copy `.env.example` to `.env.local` and set your Formspree endpoint:
+Copy `.env.example` to `.env.local`:
 
 ```bash
 cp .env.example .env.local
 ```
+
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Public URL (local dev, `*.pages.dev`, or custom domain later) |
+| `NEXT_PUBLIC_FORMSPREE_ENDPOINT` | Contact form endpoint (optional for now) |
 
 ## Build
 
@@ -36,16 +41,27 @@ npm run build
 
 Static files are output to `out/` — this is what Cloudflare Pages deploys.
 
-## Deploy to Cloudflare Pages
+## GitHub
 
-1. Push this repo to GitHub/GitLab
-2. In Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → Connect to Git
-3. Build settings:
+```bash
+git remote -v
+git push -u origin main
+```
+
+## Deploy to Cloudflare Pages (free `*.pages.dev` URL)
+
+1. Push this repo to GitHub
+2. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → Connect to Git
+3. Select this repository
+4. Build settings:
    - **Build command:** `npm run build`
    - **Build output directory:** `out`
    - **Node version:** 20
-4. Add environment variable `NEXT_PUBLIC_FORMSPREE_ENDPOINT` (if using Formspree)
-5. Attach custom domain `integratedneuro.ca`
+5. Environment variables (Production):
+   - `NEXT_PUBLIC_SITE_URL` = your `https://<project>.pages.dev` URL (set after first deploy)
+6. Deploy — Cloudflare assigns a free `*.pages.dev` subdomain
+
+Custom domain (`integratedneuro.ca`) and legacy redirects can be added later.
 
 ## Project structure
 
@@ -57,10 +73,10 @@ lib/           → Site config, metadata helpers
 public/        → Static assets, _redirects, _headers
 ```
 
-## Before launch
+## Before production launch
 
 - [ ] Replace placeholder headshots in `public/images/`
 - [ ] Review team bios in `content/team.ts`
-- [ ] Set Formspree endpoint in Cloudflare env vars
-- [ ] Configure `in-sightwellness.ca` redirects at DNS/Cloudflare level
+- [ ] Set Formspree endpoint
+- [ ] Set `NEXT_PUBLIC_SITE_URL` to the live URL
 - [ ] Review all pages with Sonia and Jennifer
