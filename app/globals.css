@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f7f4;
-  --foreground: #1a2e3b;
-  --primary: #1e4d5c;
-  --primary-dark: #163a46;
-  --accent: #6b8f71;
+  --background: #faf8f5;
+  --foreground: #1c2e38;
+  --primary: #1b4854;
+  --primary-dark: #13353f;
+  --primary-light: #2a6575;
+  --accent: #5f8568;
   --accent-light: #e8f0e9;
-  --muted: #5c6b73;
-  --border: #d9e2e6;
+  --accent-muted: #f4f8f4;
+  --muted: #5a6a72;
+  --border: #dde5e8;
   --card: #ffffff;
+  --warm: #c9b99a;
 }
 
 @theme inline {
@@ -17,19 +20,25 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
+  --color-accent-muted: var(--accent-muted);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-card: var(--card);
+  --color-warm: var(--warm);
   --font-sans: var(--font-source-sans);
   --font-serif: var(--font-source-serif);
+  --shadow-soft: 0 1px 3px rgb(27 72 84 / 0.06), 0 8px 24px rgb(27 72 84 / 0.06);
+  --shadow-card: 0 2px 8px rgb(27 72 84 / 0.08), 0 12px 32px rgb(27 72 84 / 0.05);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-source-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -37,6 +46,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-source-serif), Georgia, serif;
+  text-wrap: balance;
 }
 
 .sr-only {
@@ -49,4 +59,51 @@ h4 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.hero-pattern {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgb(95 133 104 / 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgb(27 72 84 / 0.08), transparent);
+}
+
+.page-header-pattern {
+  background-color: var(--accent-muted);
+  background-image:
+    radial-gradient(ellipse 70% 80% at 90% 10%, rgb(95 133 104 / 0.15), transparent),
+    radial-gradient(ellipse 50% 60% at 10% 90%, rgb(27 72 84 / 0.06), transparent);
+}
+
+.card-elevated {
+  box-shadow: var(--shadow-card);
+}
+
+.prose-content p + p {
+  margin-top: 1.25rem;
+}
+
+.prose-content strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.list-check li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.list-check li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  border-radius: 9999px;
+  background: var(--accent-light);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235f8568'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 0.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
 }

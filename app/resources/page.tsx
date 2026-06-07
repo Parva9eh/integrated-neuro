@@ -6,7 +6,7 @@ export const metadata = createMetadata({
   title: "Resources",
   description:
     "Helpful external resources for brain injury, dementia, and neurological conditions.",
-  path: "/resources",
+  path: "/resources/",
 });
 
 const resourceGroups = [
@@ -49,30 +49,32 @@ export default function ResourcesPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Helpful links"
         title="Resources"
-        subtitle="External organizations and information that may be helpful."
+        subtitle="External organizations and information that may support your journey."
       />
 
       <Section>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {resourceGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border border-border bg-card p-8 shadow-sm"
+              className="rounded-2xl border border-border bg-card p-8 card-elevated"
             >
               <h2 className="font-serif text-xl font-semibold text-primary">
                 {group.title}
               </h2>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-5 space-y-2.5">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline"
+                      className="inline-flex items-center gap-1 font-medium text-primary transition-colors hover:text-primary-dark hover:underline"
                     >
-                      {link.label} →
+                      {link.label}
+                      <span aria-hidden="true">→</span>
                     </a>
                   </li>
                 ))}

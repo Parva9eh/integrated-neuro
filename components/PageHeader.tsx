@@ -1,17 +1,23 @@
 type PageHeaderProps = {
   title: string;
   subtitle?: string;
+  eyebrow?: string;
 };
 
-export function PageHeader({ title, subtitle }: PageHeaderProps) {
+export function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps) {
   return (
-    <div className="border-b border-border bg-accent-light/30">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <h1 className="font-serif text-4xl font-semibold text-primary md:text-5xl">
+    <div className="page-header-pattern border-b border-border">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+        {eyebrow && (
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-accent">
+            {eyebrow}
+          </p>
+        )}
+        <h1 className="mt-2 max-w-4xl font-serif text-4xl font-semibold leading-tight text-primary md:text-5xl lg:text-[3.25rem]">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
             {subtitle}
           </p>
         )}

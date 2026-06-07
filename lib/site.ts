@@ -27,16 +27,16 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
-  { href: "/about", label: "About" },
+  { href: "/about/", label: "About" },
   {
-    href: "/services/neuropsychology",
+    href: "/services/neuropsychology/",
     label: "Services",
     children: [
-      { href: "/services/neuropsychology", label: "Neuropsychology" },
-      { href: "/services/counselling", label: "Counselling (IN-Sight)" },
+      { href: "/services/neuropsychology/", label: "Neuropsychology" },
+      { href: "/services/counselling/", label: "Counselling (IN-Sight)" },
     ],
   },
-  { href: "/team", label: "Team" },
-  { href: "/fees", label: "Fees" },
-  { href: "/contact", label: "Contact" },
+  { href: "/team/", label: "Team" },
+  { href: "/fees/", label: "Fees" },
+  { href: "/contact/", label: "Contact" },
 ] as const;

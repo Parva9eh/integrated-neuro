@@ -31,7 +31,7 @@ export function MobileNav() {
             <li>
               <Link
                 href="/"
-                className="block py-1 text-sm font-medium"
+                className="block rounded-lg py-2 text-sm font-medium transition-colors hover:bg-accent-muted"
                 onClick={() => setOpen(false)}
               >
                 Home
@@ -70,7 +70,7 @@ export function MobileNav() {
               ),
             )}
             <li className="pt-2">
-              <CTAButton href="/book" variant="secondary" className="w-full">
+              <CTAButton href="/book/" variant="secondary" className="w-full">
                 Book Appointment
               </CTAButton>
             </li>

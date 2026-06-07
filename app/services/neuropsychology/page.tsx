@@ -1,6 +1,8 @@
 import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/PageHeader";
+import { Prose } from "@/components/Prose";
 import { Section } from "@/components/Section";
+import { SectionHeading } from "@/components/SectionHeading";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
@@ -8,19 +10,19 @@ export const metadata = createMetadata({
   title: "Neuropsychology",
   description:
     "Clinical neuropsychological assessment and treatment recommendations for brain injury and neurological conditions in Vancouver.",
-  path: "/services/neuropsychology",
+  path: "/services/neuropsychology/",
 });
 
 const helpfulWhen = [
-  "Concern about decline in thinking skills, attention, or memory",
-  "Change in personality or mood due to brain injury or illness",
-  "Need to monitor recovery after injury or progression of illness",
-  "Mood, sleep, or pain problems impacting cognitive functioning",
+  "Decline in thinking skills, attention, or memory",
+  "Change in personality or mood following brain injury or illness",
+  "Need to monitor recovery after injury or progression of a condition",
+  "Mood, sleep, or pain problems affecting cognitive functioning",
 ];
 
 const questions = [
   "What is the person's level of cognitive functioning?",
-  "Does the person need accommodations at home, work, or school?",
+  "Are accommodations needed at home, work, or school?",
   "Can they live safely, drive, or manage finances independently?",
   "Can they successfully return to work or school?",
 ];
@@ -29,61 +31,55 @@ export default function NeuropsychologyPage() {
   return (
     <>
       <PageHeader
+        eyebrow="Services"
         title="Neuropsychology"
-        subtitle="Clinical neuropsychology assesses brain-related cognitive and emotional functioning after injury or neurological disease."
+        subtitle="Clinical assessment of brain-related cognitive and emotional functioning after injury or neurological disease."
       />
 
       <Section>
-        <div className="mx-auto max-w-3xl space-y-6 leading-relaxed text-muted">
+        <Prose>
           <p>
-            <strong className="text-foreground">Clinical Neuropsychology</strong>{" "}
-            is a specialty field of psychology that assesses brain-related
-            cognitive and emotional functioning after a brain injury or disease,
-            such as dementia.
+            <strong>Clinical Neuropsychology</strong> is a specialty within
+            psychology that evaluates how the brain affects thinking, emotion, and
+            behaviour — particularly after brain injury or conditions such as
+            dementia.
           </p>
           <p>
-            <strong className="text-foreground">
-              Neuropsychological Assessment
-            </strong>{" "}
-            generally includes a review of medical, vocational, and school
-            records; an interview with you and someone who knows you well; and
-            standardized tests and questionnaires. You receive verbal feedback
-            and a comprehensive report with diagnosis and treatment
-            recommendations.
+            A <strong>neuropsychological assessment</strong> typically includes
+            a review of medical and personal history, interviews with you and
+            someone who knows you well, and standardized tests. You receive
+            verbal feedback and a comprehensive written report with diagnosis and
+            treatment recommendations.
           </p>
           <p>
-            At Integrated Neuro, we are dedicated to providing high-quality,
-            timely neuropsychological services focused on patient-centred
-            assessment and plans for future care.
+            At {siteConfig.name}, we provide timely, patient-centred
+            neuropsychological services focused on clear answers and practical
+            plans for future care.
           </p>
-        </div>
+        </Prose>
       </Section>
 
       <Section variant="muted">
         <div className="grid gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="font-serif text-2xl font-semibold text-primary">
-              When can an assessment help?
-            </h2>
-            <ul className="mt-4 space-y-3 text-muted">
+          <div className="rounded-2xl border border-border bg-card p-8 card-elevated">
+            <SectionHeading
+              eyebrow="When to seek help"
+              title="When can an assessment help?"
+            />
+            <ul className="mt-6 space-y-3 list-check text-muted">
               {helpfulWhen.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="text-accent">•</span>
-                  <span>{item}</span>
-                </li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
-          <div>
-            <h2 className="font-serif text-2xl font-semibold text-primary">
-              Key questions we help answer
-            </h2>
-            <ul className="mt-4 space-y-3 text-muted">
+          <div className="rounded-2xl border border-border bg-card p-8 card-elevated">
+            <SectionHeading
+              eyebrow="What we answer"
+              title="Key questions we help address"
+            />
+            <ul className="mt-6 space-y-3 list-check text-muted">
               {questions.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="text-accent">•</span>
-                  <span>{item}</span>
-                </li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
@@ -91,22 +87,19 @@ export default function NeuropsychologyPage() {
       </Section>
 
       <Section>
-        <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
-          <h2 className="font-serif text-2xl font-semibold text-primary">
-            Fees & coverage
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted">
-            Neuropsychological assessments vary in time and cost depending on
-            purpose. Services are not covered by BC Medical Services Plan but may
-            be partly reimbursed by extended health plans. We follow the fee
-            schedule recommended by the Psychological Association of British
-            Columbia (BCPA). Contact us for more information.
+        <div className="rounded-2xl border border-border bg-card p-8 md:p-10 card-elevated">
+          <SectionHeading title="Fees & coverage" />
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted">
+            Assessments vary in time and cost depending on purpose. Services are
+            not covered by BC Medical Services Plan but may be partly reimbursed
+            through extended health plans. Fees follow the schedule recommended
+            by the Psychological Association of British Columbia (BCPA).
           </p>
-          <div className="mt-6 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-3">
             <CTAButton href={siteConfig.booking.sonia} external>
               Book with Dr. Packwood
             </CTAButton>
-            <CTAButton href="/contact" variant="outline">
+            <CTAButton href="/contact/" variant="outline">
               Contact Us
             </CTAButton>
           </div>

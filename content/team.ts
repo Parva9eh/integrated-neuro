@@ -23,30 +23,30 @@ export const teamMembers: TeamMember[] = [
     bookingUrl:
       "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/1",
     summary:
-      "Dr. Packwood specializes in clinical neuropsychology, providing assessment, education, and treatment recommendations for individuals with brain injury and neurological conditions.",
+      "Dr. Packwood provides clinical neuropsychological assessment, education, and treatment recommendations for individuals with brain injury, concussion, and neurological conditions such as dementia.",
     bio: [
-      "While working in private healthcare, Dr. Packwood noticed a lack of available counselling services offered in a collaborative setting and felt a strong interest in working with a skilled team. She believes that healthcare providers must work collaboratively to efficiently provide service to clients.",
-      "Dr. Packwood is a registered psychologist in British Columbia, specializing in Clinical Neuropsychology. Upon completing her doctorate, she undertook a two-year fellowship in Clinical Neuropsychology at Barrow Neurological Institute.",
-      "She has practiced in a variety of settings within both public and private health sectors, with experience working with professional athletes and organizations including the Phoenix Coyotes, Vancouver Canucks, Vancouver Whitecaps, and the Canada snowboard team.",
-      "Given her expertise as a neuropsychologist, Dr. Packwood focuses on providing education and resources to help clients improve their quality of life and reach their goals, using a Cognitive Behavioural Therapy-centered approach.",
+      "Dr. Packwood founded Integrated Neuro to bring collaborative, evidence-informed neurological care to Vancouver. She believes healthcare providers must work together to efficiently support clients with complex, multifaceted challenges.",
+      "She is a registered psychologist in British Columbia, specializing in Clinical Neuropsychology. After completing her doctorate, she undertook a two-year fellowship at Barrow Neurological Institute — one of North America's leading neurology hospitals.",
+      "Her experience spans public and private health sectors, including work with professional athletes and organizations such as the Vancouver Canucks, Vancouver Whitecaps, and Canada's national snowboard team.",
+      "Dr. Packwood's approach centres on education and practical resources to help clients improve their quality of life, using a Cognitive Behavioural Therapy-informed framework.",
     ],
   },
   {
     id: "jennifer",
     name: "Jennifer Allen",
     credentials: "Registered Social Worker",
-    role: "Counsellor",
+    role: "Counsellor · IN-Sight Mind Body Wellness",
     pronouns: "She/Her",
     image: "/images/jennifer.svg",
     bookingUrl:
       "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/5",
     summary:
-      "Jennifer provides counselling for anxiety, depression, grief, trauma, and adjustment to health changes, with specialized knowledge of brain-related health conditions.",
+      "Jennifer provides counselling for anxiety, depression, grief, trauma, and adjustment to health changes — with specialized expertise in brain injury, concussion, stroke, and dementia.",
     bio: [
-      "Jennifer believes that creating trust, connection, and compassion within the therapeutic relationship is at the heart of the counselling process. This allows a person's inherent strengths to evolve, growth and healing to occur, and an enhanced self-awareness and level of coping to be realized.",
-      "Jennifer is a BC Registered Social Worker (RSW) with a Master of Social Work (MSW) from the University of British Columbia. She has over 20 years of experience in both public health care and private practice.",
-      "She has specialized skills and knowledge about brain-related health conditions such as traumatic brain injury, concussion, stroke, and dementia. This includes helping people work through anxiety, depression, trauma, grief and loss, stress, adjustment to health changes, and relationship challenges.",
-      "Jennifer incorporates EMDR, mindfulness, cognitive behaviour therapy, and solution focused therapy, embedded in a trauma-informed, systems perspective.",
+      "Jennifer believes that trust, connection, and compassion within the therapeutic relationship are the foundation of meaningful change. She helps clients draw on their inherent strengths to grow, heal, and develop new ways of coping.",
+      "She is a BC Registered Social Worker (RSW) with a Master of Social Work from the University of British Columbia, and over 20 years of experience in public health care and private practice.",
+      "Her expertise includes anxiety, depression, trauma, grief and loss, relationship challenges, and navigating complex health care systems. She has advanced knowledge of brain-related conditions including TBI, concussion, stroke, and dementia.",
+      "Jennifer draws on EMDR, mindfulness, cognitive behaviour therapy, and solution-focused therapy — all within a trauma-informed, systems-based perspective.",
     ],
   },
 ];
