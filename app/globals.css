@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f5;
-  --foreground: #1c2e38;
-  --primary: #1b4854;
-  --primary-dark: #13353f;
-  --primary-light: #2a6575;
-  --accent: #5f8568;
-  --accent-light: #e8f0e9;
-  --accent-muted: #f4f8f4;
-  --muted: #5a6a72;
-  --border: #dde5e8;
-  --card: #ffffff;
-  --warm: #c9b99a;
+  --background: #b8c8d8;
+  --foreground: #040f1c;
+  --primary: #0a1e36;
+  --primary-dark: #040f1c;
+  --primary-light: #1a5082;
+  --accent: #004fff;
+  --accent-dark: #0039d6;
+  --accent-light: #e6eeff;
+  --accent-muted: #9bb0c4;
+  --insight: #8f6f5a;
+  --insight-light: #e5d8cc;
+  --insight-muted: #d4c4b6;
+  --synapse: #004fff;
+  --silver: #94a8bc;
+  --muted: #2a3f55;
+  --border: #8fa3b8;
+  --card: #edf2f7;
+  --hero-dark: #040f1c;
 }
 
 @theme inline {
@@ -22,22 +28,29 @@
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
   --color-accent-light: var(--accent-light);
   --color-accent-muted: var(--accent-muted);
+  --color-insight: var(--insight);
+  --color-insight-light: var(--insight-light);
+  --color-insight-muted: var(--insight-muted);
+  --color-synapse: var(--synapse);
+  --color-silver: var(--silver);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-card: var(--card);
-  --color-warm: var(--warm);
-  --font-sans: var(--font-source-sans);
-  --font-serif: var(--font-source-serif);
-  --shadow-soft: 0 1px 3px rgb(27 72 84 / 0.06), 0 8px 24px rgb(27 72 84 / 0.06);
-  --shadow-card: 0 2px 8px rgb(27 72 84 / 0.08), 0 12px 32px rgb(27 72 84 / 0.05);
+  --color-hero-dark: var(--hero-dark);
+  --font-sans: var(--font-jakarta);
+  --font-serif: var(--font-newsreader);
+  --shadow-soft: 0 1px 3px rgb(4 15 28 / 0.1), 0 8px 24px rgb(4 15 28 / 0.1);
+  --shadow-card: 0 2px 8px rgb(4 15 28 / 0.12), 0 12px 32px rgb(4 15 28 / 0.09);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  font-size: 1.0625rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -45,7 +58,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-source-serif), Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   text-wrap: balance;
 }
 
@@ -61,22 +74,136 @@ h4 {
   border-width: 0;
 }
 
+/* Dark hero — MRI banner + navy wash */
+.hero-dark {
+  background-color: var(--hero-dark);
+}
+
+.hero-dark__banner {
+  opacity: 0.65;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .hero-dark__banner {
+    object-position: center right;
+  }
+}
+
+.hero-dark__overlay {
+  background: linear-gradient(
+    105deg,
+    rgb(4 15 28 / 0.97) 0%,
+    rgb(4 15 28 / 0.88) 38%,
+    rgb(10 30 54 / 0.72) 62%,
+    rgb(10 30 54 / 0.35) 100%
+  );
+}
+
+/* Synapse mesh — light sections */
 .hero-pattern {
   background-color: var(--background);
-  background-image:
-    radial-gradient(ellipse 80% 60% at 100% 0%, rgb(95 133 104 / 0.12), transparent),
-    radial-gradient(ellipse 60% 50% at 0% 100%, rgb(27 72 84 / 0.08), transparent);
+  background-image: radial-gradient(
+      ellipse 55% 70% at 0% 50%,
+      rgb(10 30 54 / 0.16),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 50% 65% at 100% 50%,
+      rgb(0 79 255 / 0.16),
+      transparent
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%230A1E36' fill-opacity='0.55'/%3E%3Ccircle cx='36' cy='12' r='1.5' fill='%230A1E36' fill-opacity='0.55'/%3E%3Ccircle cx='24' cy='36' r='1.5' fill='%23004FFF' fill-opacity='0.55'/%3E%3Cpath d='M12 12 L24 36' stroke='%23004FFF' stroke-opacity='0.45' stroke-width='0.6' fill='none'/%3E%3Cpath d='M36 12 L24 36' stroke='%23004FFF' stroke-opacity='0.45' stroke-width='0.6' fill='none'/%3E%3C/svg%3E");
+  background-size:
+    auto,
+    auto,
+    48px 48px;
 }
 
 .page-header-pattern {
   background-color: var(--accent-muted);
-  background-image:
-    radial-gradient(ellipse 70% 80% at 90% 10%, rgb(95 133 104 / 0.15), transparent),
-    radial-gradient(ellipse 50% 60% at 10% 90%, rgb(27 72 84 / 0.06), transparent);
+  background-image: radial-gradient(
+      circle at 88% 12%,
+      transparent 18%,
+      rgb(0 79 255 / 0.16) 18.5%,
+      transparent 19%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      transparent 32%,
+      rgb(0 79 255 / 0.13) 32.5%,
+      transparent 33%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      transparent 46%,
+      rgb(0 57 214 / 0.1) 46.5%,
+      transparent 47%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 5% 95%,
+      rgb(10 30 54 / 0.14),
+      transparent
+    );
+}
+
+.section-contour {
+  background-color: var(--accent-muted);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M0 40 Q50 30 100 40 T200 40' stroke='%230A1E36' stroke-opacity='0.12' stroke-width='0.8' fill='none'/%3E%3Cpath d='M0 80 Q50 70 100 80 T200 80' stroke='%230A1E36' stroke-opacity='0.1' stroke-width='0.8' fill='none'/%3E%3Cpath d='M0 120 Q50 110 100 120 T200 120' stroke='%23004FFF' stroke-opacity='0.1' stroke-width='0.8' fill='none'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+.section-primary-pattern {
+  background-color: var(--primary);
+  background-image: radial-gradient(
+      circle at 50% 120%,
+      rgb(0 79 255 / 0.45),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 20% 50%,
+      transparent 30%,
+      rgb(0 79 255 / 0.18) 30.5%,
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      transparent 25%,
+      rgb(0 57 214 / 0.16) 25.5%,
+      transparent 26%
+    );
+  color: #f0f4f8;
+}
+
+.footer-pattern {
+  background-color: var(--primary-dark);
+  color: #e8eef4;
+  background-image: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgb(0 79 255 / 0.22),
+      transparent
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Ccircle cx='12' cy='12' r='1.2' fill='%23ffffff' fill-opacity='0.22'/%3E%3Ccircle cx='36' cy='12' r='1.2' fill='%23ffffff' fill-opacity='0.22'/%3E%3Ccircle cx='24' cy='36' r='1.2' fill='%23ffffff' fill-opacity='0.22'/%3E%3Cpath d='M12 12 L24 36' stroke='%23004FFF' stroke-opacity='0.4' stroke-width='0.5' fill='none'/%3E%3Cpath d='M36 12 L24 36' stroke='%23004FFF' stroke-opacity='0.4' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  background-size:
+    auto,
+    48px 48px;
 }
 
 .card-elevated {
   box-shadow: var(--shadow-card);
+}
+
+.card-accent-primary {
+  border-top: 3px solid var(--primary);
+}
+
+.card-accent-insight {
+  border-top: 3px solid var(--insight);
+}
+
+.card-accent-accent {
+  border-top: 3px solid var(--accent);
 }
 
 .prose-content p + p {
@@ -102,8 +229,171 @@ h4 {
   margin-top: 0.15rem;
   border-radius: 9999px;
   background: var(--accent-light);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235f8568'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23004fff'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
   background-size: 0.75rem;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes synapse-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes ring-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+@keyframes path-flow {
+  0% {
+    stroke-dashoffset: 28;
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.45;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.75s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-float {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+/* Neural visual — bright variant for dark hero */
+.neural-visual .neural-ring {
+  fill: none;
+  stroke: rgb(0 79 255 / 0.35);
+  animation: ring-pulse 4s ease-in-out infinite;
+}
+
+.neural-visual .neural-ring-delay {
+  animation-delay: 1s;
+}
+
+.neural-visual .neural-ring-delay-2 {
+  animation-delay: 2s;
+}
+
+.neural-visual .neural-outline {
+  fill: rgb(0 79 255 / 0.1);
+  stroke: rgb(77 140 255 / 0.5);
+}
+
+.neural-visual .neural-path {
+  stroke: rgb(0 79 255 / 0.85);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 8 8;
+  animation: path-flow 3.5s ease-in-out infinite;
+}
+
+.neural-visual .neural-path-delay {
+  animation-delay: 0.7s;
+}
+
+.neural-visual .neural-path-delay-2 {
+  animation-delay: 1.4s;
+}
+
+.neural-visual .neural-node {
+  fill: rgb(0 79 255);
+  filter: drop-shadow(0 0 8px rgb(0 79 255 / 0.9));
+  animation: synapse-pulse 2.5s ease-in-out infinite;
+}
+
+.neural-visual .neural-node-delay {
+  animation-delay: 0.5s;
+}
+
+.neural-visual .neural-node-delay-2 {
+  animation-delay: 1s;
+}
+
+.card-hover-lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    var(--shadow-card),
+    0 16px 40px rgb(4 15 28 / 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-fade-in-up {
+    opacity: 1;
+    animation: none;
+  }
+
+  .animate-float {
+    animation: none;
+    transform: none;
+  }
 }

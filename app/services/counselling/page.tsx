@@ -19,13 +19,14 @@ export default function CounsellingPage() {
     <>
       <PageHeader
         eyebrow="IN-Sight Mind Body Wellness"
+        eyebrowAccent="insight"
         title="Counselling & Mental Health"
         subtitle={`Individual and family counselling for those facing life's challenges — provided through ${siteConfig.counsellingBrand}.`}
       />
 
       <Section>
         <Prose>
-          <blockquote className="border-l-4 border-accent pl-6 font-serif text-xl italic text-foreground">
+          <blockquote className="border-l-4 border-insight pl-6 font-serif text-xl italic text-foreground">
             &ldquo;Mental strength is not the ability to stay out of the
             darkness — it&apos;s the ability to sit present in the darkness,
             knowing the light will shine again.&rdquo;
@@ -42,10 +43,10 @@ export default function CounsellingPage() {
           </p>
         </Prose>
 
-        <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-accent/30 bg-accent-muted p-8 md:p-10">
+        <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-insight/30 bg-insight-muted p-8 md:p-10 card-elevated card-accent-insight">
           <div className="flex flex-wrap gap-2">
-            <Badge>ICBC accepted</Badge>
-            <Badge>FNHA accepted</Badge>
+            <Badge variant="insight">ICBC accepted</Badge>
+            <Badge variant="insight">FNHA accepted</Badge>
           </div>
           <h2 className="mt-4 font-serif text-2xl font-semibold text-primary">
             Extended health coverage
@@ -80,13 +81,13 @@ export default function CounsellingPage() {
         <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-8 md:p-10 card-elevated">
           <SectionHeading title="Session fees" />
           <ul className="mt-6 space-y-3">
-            <li className="flex items-baseline justify-between rounded-xl bg-accent-muted px-5 py-4">
-              <span className="text-muted">Registered psychologist (50 min)</span>
-              <strong className="font-serif text-xl text-primary">$225</strong>
+            <li className="flex flex-col gap-1 rounded-xl bg-insight-muted px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+              <span className="min-w-0 text-muted">Registered psychologist (50 min)</span>
+              <strong className="shrink-0 font-serif text-xl text-primary">$225</strong>
             </li>
-            <li className="flex items-baseline justify-between rounded-xl bg-accent-muted px-5 py-4">
-              <span className="text-muted">Counsellor / social worker (50 min)</span>
-              <strong className="font-serif text-xl text-primary">$155</strong>
+            <li className="flex flex-col gap-1 rounded-xl bg-insight-muted px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+              <span className="min-w-0 text-muted">Counsellor / social worker (50 min)</span>
+              <strong className="shrink-0 font-serif text-xl text-primary">$155</strong>
             </li>
           </ul>
           <p className="mt-5 text-sm text-muted">

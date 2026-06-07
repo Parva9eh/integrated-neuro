@@ -3,7 +3,6 @@ export type TeamMember = {
   name: string;
   credentials: string;
   role: string;
-  pronouns: string;
   image: string;
   imageFallback: string;
   summary: string;
@@ -18,7 +17,6 @@ export const teamMembers: TeamMember[] = [
     name: "Dr. Sonia Packwood",
     credentials: "Registered Psychologist",
     role: "Director · Clinical Neuropsychology",
-    pronouns: "She/Her",
     image: "/images/sonia.jpg",
     imageFallback: "/images/sonia.svg",
     languages: "English and French",
@@ -38,7 +36,6 @@ export const teamMembers: TeamMember[] = [
     name: "Jennifer Allen",
     credentials: "Registered Social Worker",
     role: "Counsellor · IN-Sight Mind Body Wellness",
-    pronouns: "She/Her",
     image: "/images/jennifer.jpg",
     imageFallback: "/images/jennifer.svg",
     bookingUrl:

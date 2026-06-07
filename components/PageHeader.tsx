@@ -2,14 +2,37 @@ type PageHeaderProps = {
   title: string;
   subtitle?: string;
   eyebrow?: string;
+  eyebrowAccent?: "accent" | "insight" | "primary";
 };
 
-export function PageHeader({ title, subtitle, eyebrow }: PageHeaderProps) {
+const eyebrowColors = {
+  accent: "text-accent",
+  insight: "text-insight",
+  primary: "text-primary",
+};
+
+export function PageHeader({
+  title,
+  subtitle,
+  eyebrow,
+  eyebrowAccent = "accent",
+}: PageHeaderProps) {
   return (
-    <div className="page-header-pattern border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div className="page-header-pattern relative overflow-hidden border-b border-border">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: "url('/images/neural-accent.svg')",
+          backgroundRepeat: "repeat-x",
+          backgroundPosition: "bottom",
+          backgroundSize: "auto 100%",
+        }}
+      />
+      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
         {eyebrow && (
-          <p className="text-xs font-bold uppercase tracking-[0.15em] text-accent">
+          <p
+            className={`text-xs font-bold uppercase tracking-[0.12em] ${eyebrowColors[eyebrowAccent]}`}
+          >
             {eyebrow}
           </p>
         )}

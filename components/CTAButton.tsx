@@ -3,7 +3,7 @@ import Link from "next/link";
 type CTAButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "accent" | "outline" | "outline-light" | "ghost";
   external?: boolean;
   className?: string;
   size?: "default" | "sm";
@@ -11,13 +11,17 @@ type CTAButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark shadow-sm hover:shadow-md",
+    "bg-primary text-white hover:bg-primary-light shadow-sm hover:shadow-md ring-1 ring-inset ring-white/10",
   secondary:
-    "bg-accent text-white hover:bg-[#4f7358] shadow-sm hover:shadow-md",
+    "bg-accent text-white border border-white/40 hover:bg-accent-dark hover:border-white/55 shadow-[0_2px_12px_rgb(0_79_255/0.3)] ring-1 ring-inset ring-white/15",
+  accent:
+    "bg-accent text-white border border-white/40 hover:bg-accent-dark hover:border-white/55 shadow-[0_2px_12px_rgb(0_79_255/0.3)] ring-1 ring-inset ring-white/15",
   outline:
-    "border-2 border-primary/80 text-primary hover:bg-primary hover:text-white hover:border-primary",
+    "border-2 border-primary/80 text-primary hover:bg-primary hover:text-white hover:border-primary hover:ring-2 hover:ring-synapse/25",
+  "outline-light":
+    "border-2 border-white/70 text-white hover:border-white hover:bg-white hover:text-primary-dark",
   ghost:
-    "text-primary hover:bg-accent-muted",
+    "text-primary hover:bg-accent-light",
 };
 
 const sizes = {
@@ -33,7 +37,7 @@ export function CTAButton({
   className = "",
   size = "default",
 }: CTAButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full font-semibold tracking-wide transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (external) {
     return (

@@ -26,13 +26,13 @@ export default function FeesPage() {
           <div>
             <SectionHeading title="Counselling fees" description="50-minute sessions" />
             <ul className="mt-6 space-y-3">
-              <li className="flex items-baseline justify-between rounded-2xl border border-border bg-card px-6 py-5 card-elevated">
-                <span className="text-muted">Registered psychologist</span>
-                <strong className="font-serif text-2xl text-primary">$200–$225</strong>
+              <li className="flex flex-col gap-1 rounded-2xl border border-border bg-card px-5 py-4 card-elevated sm:flex-row sm:items-baseline sm:justify-between sm:gap-3 sm:px-6 sm:py-5">
+                <span className="min-w-0 text-muted">Registered psychologist</span>
+                <strong className="shrink-0 font-serif text-xl text-primary sm:text-2xl">$200–$225</strong>
               </li>
-              <li className="flex items-baseline justify-between rounded-2xl border border-border bg-card px-6 py-5 card-elevated">
-                <span className="text-muted">Registered counsellor or social worker</span>
-                <strong className="font-serif text-2xl text-primary">$155</strong>
+              <li className="flex flex-col gap-1 rounded-2xl border border-border bg-card px-5 py-4 card-elevated sm:flex-row sm:items-baseline sm:justify-between sm:gap-3 sm:px-6 sm:py-5">
+                <span className="min-w-0 text-muted">Registered counsellor or social worker</span>
+                <strong className="shrink-0 font-serif text-xl text-primary sm:text-2xl">$155</strong>
               </li>
             </ul>
           </div>

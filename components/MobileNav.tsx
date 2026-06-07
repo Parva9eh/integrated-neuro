@@ -1,19 +1,41 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/site";
 import { CTAButton } from "./CTAButton";
+
+const linkClass =
+  "flex min-h-11 items-center rounded-lg px-2 text-sm font-medium transition-colors hover:bg-accent-light";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
-    <div className="lg:hidden">
+    <div className="shrink-0 lg:hidden">
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="rounded-lg border border-border px-3 py-2 text-sm font-medium"
+        className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/25 px-3 text-sm font-medium text-white"
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
@@ -22,60 +44,68 @@ export function MobileNav() {
       </button>
 
       {open && (
-        <nav
-          id="mobile-menu"
-          className="absolute left-0 right-0 top-full border-b border-border bg-card px-6 py-4 shadow-lg"
-          aria-label="Mobile"
-        >
-          <ul className="space-y-3">
-            <li>
-              <Link
-                href="/"
-                className="block rounded-lg py-2 text-sm font-medium transition-colors hover:bg-accent-muted"
-                onClick={() => setOpen(false)}
-              >
-                Home
-              </Link>
-            </li>
-            {navLinks.map((link) =>
-              "children" in link ? (
-                <li key={link.label}>
-                  <span className="block py-1 text-xs font-semibold uppercase tracking-wide text-muted">
-                    {link.label}
-                  </span>
-                  <ul className="ml-3 space-y-2">
-                    {link.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block py-1 text-sm"
-                          onClick={() => setOpen(false)}
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="block py-1 text-sm font-medium"
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ),
-            )}
-            <li className="pt-2">
-              <CTAButton href="/book/" variant="secondary" className="w-full">
-                Book Appointment
-              </CTAButton>
-            </li>
-          </ul>
-        </nav>
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 top-14.25 z-40 bg-black/40"
+            aria-label="Close navigation menu"
+            onClick={() => setOpen(false)}
+          />
+          <nav
+            id="mobile-menu"
+            className="absolute left-0 right-0 top-full z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-border bg-card px-4 py-4 text-foreground shadow-lg sm:px-6"
+            aria-label="Mobile"
+          >
+            <ul className="space-y-1">
+              <li>
+                <Link
+                  href="/"
+                  className={linkClass}
+                  onClick={() => setOpen(false)}
+                >
+                  Home
+                </Link>
+              </li>
+              {navLinks.map((link) =>
+                "children" in link ? (
+                  <li key={link.label}>
+                    <span className="block px-2 py-2 text-xs font-semibold uppercase tracking-wide text-muted">
+                      {link.label}
+                    </span>
+                    <ul className="ml-1 space-y-1">
+                      {link.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className={linkClass}
+                            onClick={() => setOpen(false)}
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={linkClass}
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ),
+              )}
+              <li className="pt-3">
+                <CTAButton href="/book/" variant="accent" className="w-full">
+                  Book Appointment
+                </CTAButton>
+              </li>
+            </ul>
+          </nav>
+        </>
       )}
     </div>
   );

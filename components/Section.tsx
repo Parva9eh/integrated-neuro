@@ -7,8 +7,8 @@ type SectionProps = {
 
 const variants = {
   default: "bg-background",
-  muted: "bg-accent-muted/60",
-  primary: "bg-primary text-white",
+  muted: "section-contour",
+  primary: "section-primary-pattern text-white",
   card: "bg-card border-y border-border",
 };
 

@@ -1,3 +1,4 @@
+import { AnimateIn } from "@/components/AnimateIn";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -24,8 +25,10 @@ export default function TeamPage() {
 
       <Section>
         <div className="space-y-10">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
+          {teamMembers.map((member, i) => (
+            <AnimateIn key={member.id} delay={i * 100}>
+              <TeamMemberCard member={member} />
+            </AnimateIn>
           ))}
         </div>
       </Section>

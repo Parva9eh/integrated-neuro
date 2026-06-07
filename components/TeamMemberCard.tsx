@@ -4,9 +4,9 @@ import { CTAButton } from "./CTAButton";
 
 export function TeamMemberCard({ member }: { member: TeamMember }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-border bg-card card-elevated">
+    <article className="card-hover-lift overflow-hidden rounded-2xl border border-border bg-card card-elevated">
       <div className="grid lg:grid-cols-[300px_1fr]">
-        <div className="relative aspect-[4/5] bg-gradient-to-br from-accent-light to-accent-muted lg:aspect-auto lg:min-h-[400px]">
+        <div className="relative aspect-4/5 bg-linear-to-br from-accent-light to-accent-muted lg:aspect-auto lg:min-h-100">
           <FallbackImage
             src={member.image}
             fallbackSrc={member.imageFallback}
@@ -25,7 +25,7 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             {member.name}
           </h2>
           <p className="mt-1 text-sm text-muted">
-            {member.credentials} · {member.pronouns}
+            {member.credentials}
             {member.languages ? ` · ${member.languages}` : ""}
           </p>
           <p className="mt-5 text-base leading-relaxed text-foreground">
@@ -50,8 +50,14 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
 
           {member.bookingUrl && (
             <div className="mt-8">
-              <CTAButton href={member.bookingUrl} external variant="outline" size="sm">
-                Schedule with {member.id === "sonia" ? "Dr. Packwood" : "Jennifer"}
+              <CTAButton
+                href={member.bookingUrl}
+                external
+                variant="outline"
+                size="sm"
+              >
+                Schedule with{" "}
+                {member.id === "sonia" ? "Dr. Packwood" : "Jennifer"}
               </CTAButton>
             </div>
           )}
