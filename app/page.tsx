@@ -31,7 +31,10 @@ export default function Home() {
         <div className="grid items-center gap-10 py-16 md:grid-cols-2 md:py-24">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-              Vancouver, BC
+              Downtown Vancouver, BC
+            </p>
+            <p className="mt-1 text-sm text-muted">
+              {siteConfig.contact.address}
             </p>
             <h1 className="mt-3 font-serif text-4xl font-semibold leading-tight text-primary md:text-5xl">
               Integrated care for neurological health and mental wellness

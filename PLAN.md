@@ -6,7 +6,8 @@
 |---|---|
 | **GitHub repo** | [github.com/Parva9eh/integrated-neuro](https://github.com/Parva9eh/integrated-neuro) |
 | **Branch** | `main` |
-| **Hosting** | Cloudflare Pages (free `*.pages.dev` URL) |
+| **Hosting** | Cloudflare Pages (free `*.pages.dev` URL) — live ✅ |
+| **CI/CD** | `git push` → auto-deploy verified ✅ |
 | **Custom domain** | Deferred (`integratedneuro.ca` later) |
 | **Legacy redirects** | Deferred (`in-sightwellness.ca` later) |
 
@@ -101,14 +102,14 @@ Build a new **public brochure site** for the clinic that:
 
 ### Phase 4 — Cloudflare deployment (free `*.pages.dev`)
 
-#### 4a. Initial deploy — in progress
+#### 4a. Initial deploy ✅
 - [x] Push repo to GitHub (`Parva9eh/integrated-neuro`)
 - [x] Connect Cloudflare Pages to GitHub
 - [x] Set build command: `npm run build`
-- [ ] Confirm build output directory: `out`
-- [ ] Confirm Node.js version: `20`
-- [ ] First production deployment succeeds
-- [ ] Note live URL: `https://<project>.pages.dev`
+- [x] Confirm build output directory: `out`
+- [x] Confirm Node.js version: `20`
+- [x] First production deployment succeeds
+- [x] Live on `*.pages.dev`
 - [ ] Set `NEXT_PUBLIC_SITE_URL` env var to `*.pages.dev` URL
 - [ ] Redeploy after env var is set
 - [ ] Smoke-test all pages on live URL
@@ -196,7 +197,7 @@ git push origin main  →  Cloudflare builds  →  static files in out/  →  li
 ## 9. Launch checklist
 
 ### Now (free `*.pages.dev` preview)
-- [ ] First Cloudflare deployment succeeds
+- [x] First Cloudflare deployment succeeds
 - [ ] `NEXT_PUBLIC_SITE_URL` set and redeployed
 - [ ] All pages load on `*.pages.dev`
 - [ ] Jane App links open correctly
