@@ -16,6 +16,7 @@ export function MobileNav() {
         className="rounded-lg border border-border px-3 py-2 text-sm font-medium"
         aria-expanded={open}
         aria-controls="mobile-menu"
+        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
       >
         {open ? "Close" : "Menu"}
       </button>

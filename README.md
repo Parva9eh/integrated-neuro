@@ -9,7 +9,7 @@ Public brochure site for Integrated Neuro — built with Next.js static export a
 - **Tailwind CSS**
 - **Cloudflare Pages** (hosting)
 
-See [PLAN.md](./PLAN.md) for the full project plan.
+See [PLAN.md](./PLAN.md) for the project plan and [DEPLOY.md](./DEPLOY.md) for Cloudflare setup steps.
 
 ## Getting started
 
