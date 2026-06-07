@@ -25,6 +25,9 @@ export default function BookPage() {
             you have questions about which service is right for you, please
             contact us first.
           </p>
+          <p className="mt-4 text-sm font-medium text-accent">
+            Counselling: ICBC and FNHA coverage accepted.
+          </p>
 
           <div className="mt-10 space-y-4">
             <CTAButton

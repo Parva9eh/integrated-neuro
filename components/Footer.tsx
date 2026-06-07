@@ -41,6 +41,7 @@ export function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </p>
+              <p>Fax: {siteConfig.contact.fax}</p>
             </address>
           </div>
 
