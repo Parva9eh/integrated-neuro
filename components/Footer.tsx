@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -7,17 +8,11 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3">
-              <span
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 font-serif text-xs font-bold"
-                aria-hidden="true"
-              >
-                IN
-              </span>
-              <h2 className="font-serif text-lg font-semibold">
-                {siteConfig.name}
-              </h2>
-            </div>
+            <Logo
+              variant="full"
+              linkToHome={false}
+              className="h-8 w-auto max-w-[200px] opacity-95"
+            />
             <p className="mt-3 text-sm leading-relaxed text-white/75">
               Counselling services by {siteConfig.counsellingBrand}
             </p>

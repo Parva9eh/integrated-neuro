@@ -5,6 +5,7 @@ export type TeamMember = {
   role: string;
   pronouns: string;
   image: string;
+  imageFallback: string;
   summary: string;
   bio: string[];
   bookingUrl?: string;
@@ -18,7 +19,8 @@ export const teamMembers: TeamMember[] = [
     credentials: "Registered Psychologist",
     role: "Director · Clinical Neuropsychology",
     pronouns: "She/Her",
-    image: "/images/sonia.svg",
+    image: "/images/sonia.jpg",
+    imageFallback: "/images/sonia.svg",
     languages: "English and French",
     bookingUrl:
       "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/1",
@@ -37,7 +39,8 @@ export const teamMembers: TeamMember[] = [
     credentials: "Registered Social Worker",
     role: "Counsellor · IN-Sight Mind Body Wellness",
     pronouns: "She/Her",
-    image: "/images/jennifer.svg",
+    image: "/images/jennifer.jpg",
+    imageFallback: "/images/jennifer.svg",
     bookingUrl:
       "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/5",
     summary:

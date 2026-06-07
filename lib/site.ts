@@ -8,6 +8,12 @@ export const siteConfig = {
     "Holistic, evidence-informed care for brain injury, neurological conditions, and mental wellness in Vancouver, BC.",
   url: defaultSiteUrl,
   counsellingBrand: "IN-Sight Mind Body Wellness",
+  logo: {
+    src: "/images/logo.png",
+    fallback: "/images/logo.svg",
+    mark: "/images/logo.png",
+    markFallback: "/images/logo.svg",
+  },
   contact: {
     address: "Suite 300 – 1090 Homer Street",
     city: "Vancouver, BC V6B 2W9",

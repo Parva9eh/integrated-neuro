@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { siteConfig, navLinks } from "@/lib/site";
+import { Logo } from "@/components/Logo";
+import { navLinks } from "@/lib/site";
 import { CTAButton } from "./CTAButton";
 import { MobileNav } from "./MobileNav";
 
@@ -7,22 +8,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-card/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
-        <Link href="/" className="group flex items-center gap-3">
-          <span
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-serif text-sm font-bold text-white shadow-sm transition-transform group-hover:scale-105"
-            aria-hidden="true"
-          >
-            IN
-          </span>
-          <span>
-            <span className="block font-serif text-lg font-semibold leading-tight text-primary">
-              {siteConfig.name}
-            </span>
-            <span className="block text-[11px] font-medium tracking-wide text-muted">
-              {siteConfig.tagline}
-            </span>
-          </span>
-        </Link>
+        <Logo variant="full" className="h-9 w-auto max-w-[200px] md:h-10" />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {navLinks.map((link) =>
@@ -53,7 +39,7 @@ export function Header() {
               </Link>
             ),
           )}
-          <CTAButton href="/book" variant="secondary" className="!px-5 !py-2.5">
+          <CTAButton href="/book/" variant="secondary" className="!px-5 !py-2.5">
             Book Appointment
           </CTAButton>
         </nav>

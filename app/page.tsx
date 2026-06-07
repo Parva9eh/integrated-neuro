@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { FallbackImage } from "@/components/FallbackImage";
 import { Badge } from "@/components/Badge";
 import { CTAButton } from "@/components/CTAButton";
 import { Section } from "@/components/Section";
@@ -131,8 +131,9 @@ export default function Home() {
               className="group flex items-center gap-6 rounded-2xl border border-border bg-card p-6 card-elevated transition-all hover:-translate-y-0.5 hover:border-primary/20"
             >
               <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl bg-accent-light">
-                <Image
+                <FallbackImage
                   src={member.image}
+                  fallbackSrc={member.imageFallback}
                   alt={member.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"

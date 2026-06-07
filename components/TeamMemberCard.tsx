@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FallbackImage } from "@/components/FallbackImage";
 import type { TeamMember } from "@/content/team";
 import { CTAButton } from "./CTAButton";
 
@@ -7,8 +7,9 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
     <article className="overflow-hidden rounded-2xl border border-border bg-card card-elevated">
       <div className="grid lg:grid-cols-[300px_1fr]">
         <div className="relative aspect-[4/5] bg-gradient-to-br from-accent-light to-accent-muted lg:aspect-auto lg:min-h-[400px]">
-          <Image
+          <FallbackImage
             src={member.image}
+            fallbackSrc={member.imageFallback}
             alt={`Portrait of ${member.name}`}
             fill
             className="object-cover"
