@@ -7,8 +7,10 @@ import { MobileNav } from "./MobileNav";
 export function Header() {
   return (
     <header className="relative top-0 z-50 border-b border-border bg-card/95 text-foreground backdrop-blur-md">
-      <div className="relative mx-auto flex min-w-0 max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-3.5">
-        <BrandLockup />
+      <div className="relative mx-auto flex min-h-14 min-w-0 max-w-6xl items-center justify-between gap-2 px-4 py-2.5 sm:min-h-[3.75rem] sm:gap-3 sm:px-6 sm:py-3">
+        <div className="min-w-0 max-w-[calc(100%-3rem)] sm:max-w-[calc(100%-3.5rem)]">
+          <BrandLockup />
+        </div>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {navLinks.map((link) =>

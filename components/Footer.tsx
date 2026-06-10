@@ -18,9 +18,9 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="footer-pattern relative z-10 mt-auto">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
-          <div className="min-w-0 max-w-md">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 md:gap-x-8 lg:grid-cols-12 lg:gap-x-12">
+          <div className="min-w-0 lg:col-span-5">
             <BrandLockup layout="footer" linkToHome={false} />
             <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted">
               <p>{siteConfig.serviceLines.neuro}</p>
@@ -28,7 +28,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="shrink-0 lg:pt-1">
+          <div className="min-w-0 lg:col-span-3">
             <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-silver">
               Quick Links
             </h3>
@@ -43,7 +43,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="min-w-0 max-w-sm lg:ml-auto">
+          <div className="min-w-0 md:col-span-2 lg:col-span-4">
             <SectionImage
               src={siteConfig.sectionImages.contact}
               alt="Integrated Neuro office in Vancouver"

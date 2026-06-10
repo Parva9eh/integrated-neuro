@@ -47,13 +47,13 @@ export function MobileNav() {
         <>
           <button
             type="button"
-            className="fixed inset-0 top-14.25 z-40 bg-black/40"
+            className="fixed inset-x-0 bottom-0 top-14 z-40 bg-black/40 sm:top-[3.75rem]"
             aria-label="Close navigation menu"
             onClick={() => setOpen(false)}
           />
           <nav
             id="mobile-menu"
-            className="absolute left-0 right-0 top-full z-50 max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-border bg-card px-4 py-4 text-foreground shadow-lg sm:px-6"
+            className="absolute left-0 right-0 top-full z-50 max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-b border-border bg-card px-4 py-4 text-foreground shadow-lg sm:max-h-[calc(100dvh-3.75rem)] sm:px-6"
             aria-label="Mobile"
           >
             <ul className="space-y-1">
