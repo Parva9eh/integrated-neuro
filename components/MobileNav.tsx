@@ -35,7 +35,7 @@ export function MobileNav() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-white/25 px-3 text-sm font-medium text-white"
+        className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-border px-3 text-sm font-medium text-primary"
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
@@ -99,8 +99,8 @@ export function MobileNav() {
                 ),
               )}
               <li className="pt-3">
-                <CTAButton href="/book/" variant="accent" className="w-full">
-                  Book Appointment
+                <CTAButton href="/contact/" variant="accent" className="w-full">
+                  Contact Us
                 </CTAButton>
               </li>
             </ul>

@@ -2,6 +2,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/PageHeader";
 import { Prose } from "@/components/Prose";
 import { Section } from "@/components/Section";
+import { SectionImage } from "@/components/SectionImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -37,6 +38,11 @@ export default function NeuropsychologyPage() {
       />
 
       <Section>
+        <SectionImage
+          src={siteConfig.sectionImages.neuro}
+          alt="Neuropsychological assessment and neurological care"
+          className="mb-10"
+        />
         <Prose>
           <p>
             <strong>Clinical Neuropsychology</strong> is a specialty within
@@ -96,8 +102,8 @@ export default function NeuropsychologyPage() {
             by the Psychological Association of British Columbia (BCPA).
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <CTAButton href={siteConfig.booking.sonia} external>
-              Book with Dr. Packwood
+            <CTAButton href="/contact/">
+              Contact Us
             </CTAButton>
             <CTAButton href="/contact/" variant="outline">
               Contact Us

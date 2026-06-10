@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url.replace(/\/$/, "");
+  const baseUrl = siteConfig.url;
 
   return publicRoutes
     .filter((route) => route !== "/thank-you/")

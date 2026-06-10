@@ -1,13 +1,13 @@
 import { ContactForm } from "@/components/ContactForm";
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
+import { SectionImage } from "@/components/SectionImage";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
   title: "Contact",
-  description:
-    "Contact Integrated Neuro in Vancouver. Suite 300, 1090 Homer Street. Phone 647-693-7520.",
+  description: `Contact Integrated Neuro in Vancouver. ${siteConfig.contact.address}, ${siteConfig.contact.city}. Phone ${siteConfig.contact.phone}.`,
   path: "/contact/",
 });
 
@@ -17,12 +17,20 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Get in touch"
         title="Contact Us"
-        subtitle="We're ready to help. Reach out by phone, email, or the form below."
+        subtitle="Request an appointment or ask a question — call us or use the form below."
       />
+
+      <Section className="py-12 md:py-16">
+        <SectionImage
+          src={siteConfig.sectionImages.content}
+          alt="Integrated Neuro clinic and care team"
+          priority
+        />
+      </Section>
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-10">
+          <div className="space-y-8">
             <div className="rounded-2xl border border-border bg-card p-8 card-elevated">
               <h2 className="text-xs font-bold uppercase tracking-[0.12em] text-accent">
                 Visit us
@@ -48,23 +56,6 @@ export default function ContactPage() {
                   >
                     {siteConfig.contact.phone}
                   </a>
-                </li>
-                <li>
-                  <span className="block text-xs font-semibold uppercase tracking-wide text-muted/70">
-                    Email
-                  </span>
-                  <a
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="font-medium text-primary hover:underline"
-                  >
-                    {siteConfig.contact.email}
-                  </a>
-                </li>
-                <li>
-                  <span className="block text-xs font-semibold uppercase tracking-wide text-muted/70">
-                    Fax
-                  </span>
-                  <span>{siteConfig.contact.fax}</span>
                 </li>
               </ul>
             </div>

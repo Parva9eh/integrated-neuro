@@ -48,19 +48,11 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
             </div>
           </details>
 
-          {member.bookingUrl && (
-            <div className="mt-8">
-              <CTAButton
-                href={member.bookingUrl}
-                external
-                variant="outline"
-                size="sm"
-              >
-                Schedule with{" "}
-                {member.id === "sonia" ? "Dr. Packwood" : "Jennifer"}
-              </CTAButton>
-            </div>
-          )}
+          <div className="mt-8">
+            <CTAButton href="/contact/" variant="outline" size="sm">
+              Contact us
+            </CTAButton>
+          </div>
         </div>
       </div>
     </article>

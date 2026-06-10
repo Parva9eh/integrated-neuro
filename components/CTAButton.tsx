@@ -11,15 +11,15 @@ type CTAButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-white hover:bg-primary-light shadow-sm hover:shadow-md ring-1 ring-inset ring-white/10",
+    "bg-primary text-white hover:bg-primary-light shadow-sm hover:shadow-md",
   secondary:
-    "bg-accent text-white border border-white/40 hover:bg-accent-dark hover:border-white/55 shadow-[0_2px_12px_rgb(0_79_255/0.3)] ring-1 ring-inset ring-white/15",
+    "bg-accent text-white hover:bg-accent-dark shadow-[0_2px_12px_rgb(101_188_123/0.25)]",
   accent:
-    "bg-accent text-white border border-white/40 hover:bg-accent-dark hover:border-white/55 shadow-[0_2px_12px_rgb(0_79_255/0.3)] ring-1 ring-inset ring-white/15",
+    "bg-accent text-white hover:bg-accent-dark shadow-[0_2px_12px_rgb(101_188_123/0.25)]",
   outline:
-    "border-2 border-primary/80 text-primary hover:bg-primary hover:text-white hover:border-primary hover:ring-2 hover:ring-synapse/25",
+    "border-2 border-primary/25 text-primary hover:bg-primary hover:text-white hover:border-primary",
   "outline-light":
-    "border-2 border-white/70 text-white hover:border-white hover:bg-white hover:text-primary-dark",
+    "border-2 border-card text-primary hover:bg-card hover:text-primary shadow-sm",
   ghost:
     "text-primary hover:bg-accent-light",
 };

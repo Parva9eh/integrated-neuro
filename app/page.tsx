@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
 import { FallbackImage } from "@/components/FallbackImage";
@@ -31,43 +30,27 @@ const values = [
 export default function Home() {
   return (
     <>
-      <section className="hero-dark relative overflow-hidden border-b border-primary-dark md:min-h-155">
-        {/* MRI banner — visible on the right */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/banner-gradient.jpg"
-            alt=""
-            fill
-            className="hero-dark__banner"
-            priority
-            sizes="100vw"
-          />
-        </div>
-
-        {/* Navy gradient — transparent on right so scans show through */}
-        <div className="hero-dark__overlay absolute inset-0 z-1" />
-
-        {/* Animated synapse network — tablet+ only */}
+      <section className="hero-light hero-pattern relative overflow-hidden border-b border-border md:min-h-140">
         <div className="absolute top-1/2 z-2 hidden w-100 -translate-y-1/2 md:right-[2%] md:block lg:w-125">
-          <NeuralVisual className="w-full animate-float opacity-90" />
+          <NeuralVisual className="w-full animate-float opacity-80" />
         </div>
 
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 px-4 py-16 sm:px-6 sm:py-20 md:grid-cols-2 md:gap-12 md:py-28">
           <div>
-            <h1 className="animate-fade-in-up font-serif text-4xl font-semibold leading-[1.12] text-white md:text-5xl lg:text-[3.4rem]">
+            <h1 className="animate-fade-in-up font-serif text-4xl font-semibold leading-[1.12] text-primary md:text-5xl lg:text-[3.4rem]">
               Integrated care for neurological health and mental wellness
             </h1>
-            <p className="animate-fade-in-up animate-delay-100 mt-6 text-lg leading-relaxed text-slate-300">
+            <p className="animate-fade-in-up animate-delay-100 mt-6 text-lg leading-relaxed text-muted">
               Holistic, evidence-informed support for brain injury, neurological
               conditions, and mental health — helping you move toward a life
               with meaning and purpose.
             </p>
             <div className="animate-fade-in-up animate-delay-200 mt-8 flex flex-wrap gap-3">
-              <CTAButton href="/book" variant="accent">
-                Book Appointment
-              </CTAButton>
-              <CTAButton href="/contact" variant="outline-light">
+              <CTAButton href="/contact/" variant="accent">
                 Contact Us
+              </CTAButton>
+              <CTAButton href="/services/neuropsychology/" variant="outline">
+                Our Services
               </CTAButton>
             </div>
           </div>

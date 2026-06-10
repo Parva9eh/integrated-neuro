@@ -11,7 +11,7 @@ const inputClass =
   "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15";
 
 export function ContactForm() {
-  const thankYouUrl = `${siteConfig.url.replace(/\/$/, "")}/thank-you/`;
+  const thankYouUrl = `${siteConfig.url}/thank-you/`;
 
   if (!isConfigured) {
     return (
@@ -28,21 +28,13 @@ export function ContactForm() {
           .
         </p>
         <p className="mt-5 rounded-xl bg-accent-muted px-5 py-4 text-sm text-foreground">
-          Online form coming soon. Please reach us by phone or email in the
-          meantime.
+          Online form coming soon. Please call us in the meantime.
         </p>
-        <ul className="mt-5 space-y-2 text-sm font-medium">
-          <li>
-            <a href={siteConfig.contact.phoneHref} className="text-primary hover:underline">
-              {siteConfig.contact.phone}
-            </a>
-          </li>
-          <li>
-            <a href={`mailto:${siteConfig.contact.email}`} className="text-primary hover:underline">
-              {siteConfig.contact.email}
-            </a>
-          </li>
-        </ul>
+        <p className="mt-5 text-sm font-medium">
+          <a href={siteConfig.contact.phoneHref} className="text-primary hover:underline">
+            {siteConfig.contact.phone}
+          </a>
+        </p>
       </div>
     );
   }

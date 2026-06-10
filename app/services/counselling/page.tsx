@@ -3,6 +3,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/PageHeader";
 import { Prose } from "@/components/Prose";
 import { Section } from "@/components/Section";
+import { SectionImage } from "@/components/SectionImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -25,6 +26,11 @@ export default function CounsellingPage() {
       />
 
       <Section>
+        <SectionImage
+          src={siteConfig.sectionImages.counselling}
+          alt="Counselling and mental wellness support"
+          className="mb-10"
+        />
         <Prose>
           <blockquote className="border-l-4 border-insight pl-6 font-serif text-xl italic text-foreground">
             &ldquo;Mental strength is not the ability to stay out of the
@@ -37,8 +43,8 @@ export default function CounsellingPage() {
             navigating everyday stress or adjusting to significant life changes.
           </p>
           <p>
-            We support clients through anxiety, depression, grief, loss,
-            trauma, relationship challenges, and adjustment to health changes —
+            We support clients through anxiety, depression, grief, loss, trauma,
+            relationship challenges, and adjustment to health changes —
             including brain injury, concussion, stroke, and dementia.
           </p>
         </Prose>
@@ -82,28 +88,37 @@ export default function CounsellingPage() {
           <SectionHeading title="Session fees" />
           <ul className="mt-6 space-y-3">
             <li className="flex flex-col gap-1 rounded-xl bg-insight-muted px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
-              <span className="min-w-0 text-muted">Registered psychologist (50 min)</span>
-              <strong className="shrink-0 font-serif text-xl text-primary">$225</strong>
+              <span className="min-w-0 text-muted">
+                Licensed Psychologist (50 min)
+              </span>
+              <strong className="shrink-0 font-serif text-xl text-primary">
+                $250
+              </strong>
             </li>
             <li className="flex flex-col gap-1 rounded-xl bg-insight-muted px-5 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
-              <span className="min-w-0 text-muted">Counsellor / social worker (50 min)</span>
-              <strong className="shrink-0 font-serif text-xl text-primary">$155</strong>
+              <span className="min-w-0 text-muted">
+                Registered Social Worker or Counsellor (50 min)
+              </span>
+              <strong className="shrink-0 font-serif text-xl text-primary">
+                $165
+              </strong>
             </li>
           </ul>
           <p className="mt-5 text-sm text-muted">
             Not covered by BC MSP. May be reimbursed through extended health
             plans. See our{" "}
-            <a href="/fees/" className="font-semibold text-primary hover:underline">
+            <a
+              href="/fees/"
+              className="font-semibold text-primary hover:underline"
+            >
               fees page
             </a>{" "}
             for full details.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <CTAButton href={siteConfig.booking.jennifer} external>
-              Book with Jennifer
-            </CTAButton>
-            <CTAButton href={siteConfig.booking.general} external variant="outline">
-              Book Online
+            <CTAButton href="/contact/">Contact Us</CTAButton>
+            <CTAButton href="/fees/" variant="outline">
+              View Fees
             </CTAButton>
           </div>
         </div>

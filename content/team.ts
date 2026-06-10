@@ -7,7 +7,6 @@ export type TeamMember = {
   imageFallback: string;
   summary: string;
   bio: string[];
-  bookingUrl?: string;
   languages?: string;
 };
 
@@ -15,18 +14,16 @@ export const teamMembers: TeamMember[] = [
   {
     id: "sonia",
     name: "Dr. Sonia Packwood",
-    credentials: "Registered Psychologist",
+    credentials: "Licensed Psychologist",
     role: "Director · Clinical Neuropsychology",
     image: "/images/sonia.jpg",
     imageFallback: "/images/sonia.svg",
     languages: "English and French",
-    bookingUrl:
-      "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/1",
     summary:
       "Dr. Packwood provides clinical neuropsychological assessment, education, and treatment recommendations for individuals with brain injury, concussion, and neurological conditions such as dementia.",
     bio: [
       "Dr. Packwood founded Integrated Neuro to bring collaborative, evidence-informed neurological care to Vancouver. She believes healthcare providers must work together to efficiently support clients with complex, multifaceted challenges.",
-      "She is a registered psychologist in British Columbia, specializing in Clinical Neuropsychology. After completing her doctorate, she undertook a two-year fellowship at Barrow Neurological Institute — one of North America's leading neurology hospitals.",
+      "She is a licensed psychologist in British Columbia, specializing in Clinical Neuropsychology. After completing her doctorate, she undertook a two-year fellowship at Barrow Neurological Institute — one of North America's leading neurology hospitals.",
       "Her experience spans public and private health sectors, including work with professional athletes and organizations such as the Vancouver Canucks, Vancouver Whitecaps, and Canada's national snowboard team.",
       "Dr. Packwood's approach centres on education and practical resources to help clients improve their quality of life, using a Cognitive Behavioural Therapy-informed framework.",
     ],
@@ -38,8 +35,6 @@ export const teamMembers: TeamMember[] = [
     role: "Counsellor · IN-Sight Mind Body Wellness",
     image: "/images/jennifer.jpg",
     imageFallback: "/images/jennifer.svg",
-    bookingUrl:
-      "https://integratedneuro.janeapp.com/locations/integrated-neuro/book#/staff_member/5",
     summary:
       "Jennifer provides counselling for anxiety, depression, grief, trauma, and adjustment to health changes — with specialized expertise in brain injury, concussion, stroke, and dementia.",
     bio: [

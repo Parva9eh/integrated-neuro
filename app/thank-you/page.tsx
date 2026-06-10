@@ -35,8 +35,8 @@ export default function ThankYouPage() {
             <CTAButton href="/" variant="primary">
               Back to Home
             </CTAButton>
-            <CTAButton href="/book" variant="outline">
-              Book Appointment
+            <CTAButton href="/contact/" variant="outline">
+              Contact Us
             </CTAButton>
           </div>
           <p className="mt-8 text-sm text-muted">

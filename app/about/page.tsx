@@ -2,6 +2,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { PageHeader } from "@/components/PageHeader";
 import { Prose } from "@/components/Prose";
 import { Section } from "@/components/Section";
+import { SectionImage } from "@/components/SectionImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -46,12 +47,19 @@ export default function AboutPage() {
       />
 
       <Section>
-        <Prose size="lg">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <SectionImage
+            src={siteConfig.sectionImages.about}
+            alt="Integrated Neuro collaborative care approach"
+            aspect="landscape"
+          />
+          <Prose size="lg">
           <p>
             {siteConfig.name} provides holistic, evidence-informed interventions
             for brain injury and neurological conditions. We specialize in
-            supporting individuals who have experienced moderate to severe brain
-            injury or been diagnosed with a neurological illness such as dementia.
+            supporting individuals who have experienced mild to severe brain
+            injury or been diagnosed with a neurological illness such as
+            dementia.
           </p>
           <p>
             Through our counselling division, {siteConfig.counsellingBrand}, we
@@ -63,7 +71,8 @@ export default function AboutPage() {
             your whole experience — physical, emotional, and social — so you can
             move toward a life with meaning and purpose.
           </p>
-        </Prose>
+          </Prose>
+        </div>
       </Section>
 
       <Section variant="muted">

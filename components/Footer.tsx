@@ -1,81 +1,61 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { BrandLockup } from "@/components/BrandLockup";
+import { SectionImage } from "@/components/SectionImage";
 import { siteConfig } from "@/lib/site";
 
-const linkClass =
-  "text-[#c8d6e3] transition-colors hover:text-white";
+const linkClass = "text-muted transition-colors hover:text-primary";
+
+const quickLinks = [
+  { href: "/about/", label: "About" },
+  { href: "/services/neuropsychology/", label: "Neuropsychology" },
+  { href: "/services/counselling/", label: "Counselling" },
+  { href: "/team/", label: "Team" },
+  { href: "/fees/", label: "Fees & Insurance" },
+  { href: "/contact/", label: "Contact Us" },
+  { href: "/privacy-policy/", label: "Privacy Policy" },
+] as const;
 
 export function Footer() {
   return (
     <footer className="footer-pattern relative z-10 mt-auto">
-      <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid gap-12 md:grid-cols-3">
-          <div>
-            <Logo variant="full" linkToHome={false} onDark />
-            <p className="mt-4 text-sm leading-relaxed text-[#c8d6e3]">
-              Counselling services by {siteConfig.counsellingBrand}
-            </p>
-            <p className="mt-5 text-xs leading-relaxed text-silver">
-              {siteConfig.landAcknowledgement}
-            </p>
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+          <div className="min-w-0 max-w-md">
+            <BrandLockup layout="footer" linkToHome={false} />
+            <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-muted">
+              <p>{siteConfig.serviceLines.neuro}</p>
+              <p>{siteConfig.serviceLines.counselling}</p>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-silver">
-              Contact
-            </h3>
-            <address className="mt-4 space-y-1.5 text-sm not-italic text-[#dce4ec]">
-              <p>{siteConfig.contact.address}</p>
-              <p>{siteConfig.contact.city}</p>
-              <p>
-                <a href={siteConfig.contact.phoneHref} className={linkClass}>
-                  {siteConfig.contact.phone}
-                </a>
-              </p>
-              <p>
-                <a href={`mailto:${siteConfig.contact.email}`} className={linkClass}>
-                  {siteConfig.contact.email}
-                </a>
-              </p>
-              <p className="text-silver">Fax: {siteConfig.contact.fax}</p>
-            </address>
-          </div>
-
-          <div>
+          <div className="shrink-0 lg:pt-1">
             <h3 className="text-xs font-bold uppercase tracking-[0.12em] text-silver">
               Quick Links
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li>
-                <Link href="/services/neuropsychology/" className={linkClass}>
-                  Neuropsychology
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/counselling/" className={linkClass}>
-                  Counselling
-                </Link>
-              </li>
-              <li>
-                <Link href="/fees/" className={linkClass}>
-                  Fees & Insurance
-                </Link>
-              </li>
-              <li>
-                <Link href="/book/" className={linkClass}>
-                  Book Appointment
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy/" className={linkClass}>
-                  Privacy Policy
-                </Link>
-              </li>
+            <ul className="mt-4 space-y-2 text-sm">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          <div className="min-w-0 max-w-sm lg:ml-auto">
+            <SectionImage
+              src={siteConfig.sectionImages.contact}
+              alt="Integrated Neuro office in Vancouver"
+              aspect="landscape"
+            />
+            <p className="mt-4 text-xs leading-relaxed text-silver">
+              {siteConfig.landAcknowledgement}
+            </p>
           </div>
         </div>
 
-        <p className="mt-12 border-t border-white/20 pt-8 text-center text-xs text-silver">
+        <p className="mt-10 border-t border-border pt-6 text-center text-xs text-silver">
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </p>
       </div>
