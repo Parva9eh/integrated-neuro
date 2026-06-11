@@ -1,3 +1,5 @@
+const headshotFallback = "/images/headshot.svg";
+
 export type TeamMember = {
   id: string;
   name: string;
@@ -17,7 +19,7 @@ export const teamMembers: TeamMember[] = [
     credentials: "Licensed Psychologist",
     role: "Director · Clinical Neuropsychology",
     image: "/images/sonia.jpg",
-    imageFallback: "/images/sonia.svg",
+    imageFallback: headshotFallback,
     languages: "English and French",
     summary:
       "Dr. Packwood provides clinical neuropsychological assessment, education, and treatment recommendations for individuals with brain injury, concussion, and neurological conditions such as dementia.",
@@ -34,7 +36,7 @@ export const teamMembers: TeamMember[] = [
     credentials: "Registered Social Worker",
     role: "Counsellor · IN-Sight Mind Body Wellness",
     image: "/images/jennifer.jpg",
-    imageFallback: "/images/jennifer.svg",
+    imageFallback: headshotFallback,
     summary:
       "Jennifer provides counselling for anxiety, depression, grief, trauma, and adjustment to health changes — with specialized expertise in brain injury, concussion, stroke, and dementia.",
     bio: [

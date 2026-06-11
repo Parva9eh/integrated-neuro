@@ -45,7 +45,7 @@ export function Footer() {
 
           <div className="min-w-0 md:col-span-2 lg:col-span-4">
             <SectionImage
-              src={siteConfig.sectionImages.contact}
+              src={siteConfig.sectionImages.footer}
               alt="Integrated Neuro office in Vancouver"
               aspect="landscape"
             />

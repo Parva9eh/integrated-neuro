@@ -25,9 +25,6 @@ export const siteConfig = {
   },
   logo: {
     src: "/images/logo.png",
-    fallback: "/images/logo.svg",
-    mark: "/images/logo.png",
-    markFallback: "/images/logo.svg",
   },
   insightLogo: {
     src: "/images/in-sight-logo.png",
@@ -37,9 +34,9 @@ export const siteConfig = {
   sectionImages: {
     about: "/images/about.jpg",
     neuro: "/images/neuro.jpg",
-    content: "/images/content.jpg",
     counselling: "/images/counselling.jpg",
     contact: "/images/contact.jpg",
+    footer: "/images/footer.jpg",
   },
   contact: {
     address: "230-181 Keefer PL",
