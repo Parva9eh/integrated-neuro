@@ -7,6 +7,7 @@ type CTAButtonProps = {
   external?: boolean;
   className?: string;
   size?: "default" | "sm";
+  onClick?: () => void;
 };
 
 const variants = {
@@ -36,6 +37,7 @@ export function CTAButton({
   external = false,
   className = "",
   size = "default",
+  onClick,
 }: CTAButtonProps) {
   const classes = `inline-flex items-center justify-center rounded-full font-semibold tracking-wide transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
 
@@ -53,7 +55,7 @@ export function CTAButton({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
     </Link>
   );

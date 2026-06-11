@@ -99,7 +99,12 @@ export function MobileNav() {
                 ),
               )}
               <li className="pt-3">
-                <CTAButton href="/contact/" variant="accent" className="w-full">
+                <CTAButton
+                  href="/contact/"
+                  variant="accent"
+                  className="w-full"
+                  onClick={() => setOpen(false)}
+                >
                   Contact Us
                 </CTAButton>
               </li>
