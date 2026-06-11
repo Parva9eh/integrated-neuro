@@ -25,7 +25,7 @@ export default function CounsellingPage() {
         subtitle={`Individual and family counselling for those facing life's challenges — provided through ${siteConfig.counsellingBrand}.`}
       />
 
-      <Section>
+      <Section lead>
         <SectionImage
           src={siteConfig.sectionImages.counselling}
           alt="Counselling and mental wellness support"

@@ -23,7 +23,7 @@ export default function TeamPage() {
         subtitle="Two clinicians, one integrated practice — committed to holistic, evidence-informed care."
       />
 
-      <Section>
+      <Section lead>
         <div className="space-y-10">
           {teamMembers.map((member, i) => (
             <AnimateIn key={member.id} delay={i * 100}>

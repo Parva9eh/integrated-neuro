@@ -37,7 +37,7 @@ export default function NeuropsychologyPage() {
         subtitle="Clinical assessment of brain-related cognitive and emotional functioning after injury or neurological disease."
       />
 
-      <Section>
+      <Section lead>
         <SectionImage
           src={siteConfig.sectionImages.neuro}
           alt="Neuropsychological assessment and neurological care"

@@ -19,7 +19,7 @@ export default function ThankYouPage() {
         subtitle="Your message has been received. We will get back to you shortly."
       />
 
-      <Section>
+      <Section lead>
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-lg leading-relaxed text-muted">
             If your inquiry is urgent, please call us at{" "}

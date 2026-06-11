@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
         subtitle="How we handle your information and the terms for using our website."
       />
 
-      <Section className="py-12 md:py-16">
+      <Section lead>
         <div className="mx-auto max-w-3xl space-y-8">
           <div className="rounded-2xl border border-border bg-card p-6 card-elevated md:p-8">
             <p className="text-sm text-muted">

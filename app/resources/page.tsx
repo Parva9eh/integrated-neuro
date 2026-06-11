@@ -54,7 +54,7 @@ export default function ResourcesPage() {
         subtitle="External organizations and information that may support your journey."
       />
 
-      <Section>
+      <Section lead>
         <div className="grid gap-6 md:grid-cols-2">
           {resourceGroups.map((group) => (
             <div

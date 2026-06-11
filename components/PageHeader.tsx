@@ -28,7 +28,7 @@ export function PageHeader({
           backgroundSize: "auto 100%",
         }}
       />
-      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:py-24">
         {eyebrow && (
           <p
             className={`text-xs font-bold uppercase tracking-[0.12em] ${eyebrowColors[eyebrowAccent]}`}
@@ -36,7 +36,7 @@ export function PageHeader({
             {eyebrow}
           </p>
         )}
-        <h1 className="mt-2 max-w-4xl font-serif text-4xl font-semibold leading-tight text-primary md:text-5xl lg:text-[3.25rem]">
+        <h1 className="mt-2 max-w-4xl font-serif text-3xl font-semibold leading-tight text-primary sm:text-4xl md:text-5xl lg:text-[3.25rem]">
           {title}
         </h1>
         {subtitle && (

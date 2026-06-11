@@ -21,7 +21,7 @@ export default function FeesPage() {
         subtitle="Clear fee information and guidance on coverage options."
       />
 
-      <Section>
+      <Section lead>
         <div className="mx-auto max-w-3xl space-y-14">
           <div>
             <SectionHeading

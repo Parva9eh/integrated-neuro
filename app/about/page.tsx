@@ -46,7 +46,7 @@ export default function AboutPage() {
         subtitle="Tailored assessment and treatment for injury, aging, and mental wellness — delivered with collaboration and continuity of care."
       />
 
-      <Section>
+      <Section lead>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <SectionImage
             src={siteConfig.sectionImages.about}
