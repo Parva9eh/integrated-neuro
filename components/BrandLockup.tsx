@@ -22,14 +22,12 @@ function LogoSlot({
   href,
   linkToHome,
   widthClass,
-  priority = false,
 }: {
   src: string;
   alt: string;
   href: string;
   linkToHome: boolean;
   widthClass: string;
-  priority?: boolean;
 }) {
   const image = (
     <span
@@ -41,7 +39,6 @@ function LogoSlot({
         width={389}
         height={LOGO_HEIGHT}
         className="h-auto w-full object-left"
-        priority={priority}
       />
     </span>
   );
@@ -73,7 +70,6 @@ export function BrandLockup({
       href="/"
       linkToHome={linkToHome}
       widthClass={widthClass}
-      priority={layout === "header"}
     />
   );
 
